@@ -1,1 +1,185 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Madam Jii Birthday</title><style>body{margin:0;min-height:100vh;background:#070713;color:#fff;font-family:system-ui;text-align:center;display:grid;place-items:center}.box{padding:30px}button{padding:14px 22px;border:0;border-radius:999px}</style></head><body><div class="box"><h1>Hey, Madam Jii ❤️</h1><p>Your birthday surprise is being prepared...</p><button>Continue ✨</button></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#050509">
+<title>Madam Jii ❤️</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#050509;color:#fff;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;touch-action:none}
+body{position:relative}
+#stars{position:fixed;inset:0;pointer-events:none}
+.star{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;opacity:.5;animation:twinkle 2.5s infinite alternate}
+@keyframes twinkle{to{opacity:1;transform:scale(1.8)}}
+.screen{position:absolute;inset:0;display:none;align-items:center;justify-content:center;padding:22px}
+.screen.active{display:flex}
+.card{width:min(92vw,560px);max-height:92vh;overflow:auto;text-align:center;padding:30px 20px;border:1px solid #ffffff15;border-radius:28px;background:linear-gradient(145deg,#11111bcf,#090912e8);box-shadow:0 20px 70px #0008, inset 0 1px 0 #fff12;backdrop-filter:blur(14px)}
+.eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:.65;margin-bottom:12px}
+h1,h2{margin:0 0 14px;line-height:1.05}
+h1{font-size:clamp(38px,10vw,70px)}
+h2{font-size:clamp(28px,8vw,48px)}
+p{margin:0 auto 22px;max-width:460px;color:#ddd;line-height:1.5;font-size:16px}
+.btn{border:0;border-radius:999px;padding:14px 22px;min-height:48px;font-weight:700;font-size:16px;background:#fff;color:#0b0b12;box-shadow:0 10px 30px #0005;margin:5px;touch-action:manipulation}
+.btn.secondary{background:#ffffff12;color:#fff;border:1px solid #fff1}
+.btn:disabled{opacity:.6}
+.progress{position:fixed;top:10px;left:50%;transform:translateX(-50%);font-size:11px;opacity:.4;letter-spacing:.12em}
+.back{position:fixed;bottom:12px;left:12px;background:#ffffff10;color:#fff;border:1px solid #fff1;padding:9px 14px;border-radius:999px}
+.heart-target{font-size:130px;line-height:1;filter:drop-shadow(0 0 24px #ff4d8d);animation:pulse 1s infinite alternate}
+@keyframes pulse{to{transform:scale(1.08)}}
+#archeryCanvas{width:min(94vw,620px);height:min(72vh,620px);display:block;margin:auto;border-radius:24px}
+.game-wrap{width:100%;max-width:680px;text-align:center}
+.game-title{margin-bottom:5px;font-weight:800;font-size:22px}
+.game-tip{font-size:13px;opacity:.72;margin-bottom:12px}
+.cake-scene{position:relative;width:100%;max-width:420px;margin:20px auto}
+.cake-3d{position:relative;width:280px;height:210px;margin:0 auto;transform:rotateX(8deg) rotateY(-8deg);filter:drop-shadow(0 25px 25px #0008);transition:transform .6s}
+.cake-layer{position:absolute;left:50%;transform:translateX(-50%);border-radius:50%;background:linear-gradient(180deg,#ffb6d8,#e85d9d 65%,#b52d70);box-shadow:inset 0 -12px 0 #9b245e,0 10px 0 #7d204f}
+.cake-bottom{width:245px;height:75px;bottom:18px}.cake-middle{width:215px;height:65px;bottom:70px;background:linear-gradient(180deg,#ffd0e6,#ff82b8 65%,#d84687);box-shadow:inset 0 -10px 0 #b52d70,0 8px 0 #9b245e}.cake-top{width:190px;height:58px;bottom:120px;background:radial-gradient(ellipse at 50% 35%,#fff2f8 0 8%,#ffc3df 9% 55%,#ed6ca8 80%);box-shadow:inset 0 -8px 0 #c13c7c}
+.icing{position:absolute;bottom:111px;left:50%;width:190px;height:30px;transform:translateX(-50%);border-radius:50%;background:#fff0f7;box-shadow:0 5px 0 #f5a5ca}
+.drip{position:absolute;width:18px;height:28px;background:#fff0f7;border-radius:0 0 12px 12px;top:8px}.drip:nth-child(1){left:25px}.drip:nth-child(2){left:80px;height:38px}.drip:nth-child(3){right:30px;height:22px}
+.candle{position:absolute;bottom:154px;width:15px;height:57px;border-radius:5px 5px 3px 3px;background:repeating-linear-gradient(135deg,#fff 0 7px,#ff4d9b 7px 13px);box-shadow:0 4px 0 #b52d70;z-index:4}.candle.one{left:92px}.candle.two{left:132px}.candle.three{left:172px}
+.flame{position:absolute;left:50%;top:-27px;transform:translateX(-50%) scale(0);width:18px;height:27px;border-radius:50% 50% 50% 0;background:radial-gradient(circle at 50% 65%,#fff8a8 0 20%,#ffd23f 21% 55%,#ff6b00 56%);rotate:-45deg;opacity:0;filter:drop-shadow(0 0 12px #ffb300)}
+.candle.lit .flame{transform:translateX(-50%) scale(1) rotate(0deg);opacity:1;animation:flicker .8s infinite alternate}
+@keyframes flicker{from{filter:drop-shadow(0 0 8px #ffb300)}to{filter:drop-shadow(0 0 20px #ffdf66);transform:translateX(-50%) scale(1.12) rotate(0deg)}}
+.cut-line{position:absolute;left:50%;top:20px;height:180px;border-left:4px solid #fff8;transform:translateX(-50%);opacity:0;filter:drop-shadow(0 0 8px #ffb6d8);transition:.4s}
+.cake-split .cut-line{opacity:1}
+#knifeStage{position:absolute;inset:0;width:100%;height:100%;display:none;z-index:20;touch-action:none}
+#knifeStage.active{display:block}
+.teddy-knife{position:absolute;font-size:54px;left:calc(50% - 27px);top:5px;pointer-events:none;filter:drop-shadow(0 7px 8px #0009)}
+.cake-note{color:#ffd0e6;font-size:15px;min-height:25px}
+.options{display:grid;grid-template-columns:1fr;gap:12px;margin-top:18px}
+.option{padding:18px;border-radius:20px;background:#ffffff08;border:1px solid #fff1;color:#fff;font-weight:700}
+.message{font-size:32px}
+@media(max-width:480px){.card{width:calc(100vw - 28px);max-height:90vh;padding:24px 14px}.cake-3d{transform:scale(.78) rotateX(8deg) rotateY(-8deg)}.btn{width:min(90vw,360px)}#archeryCanvas{height:62vh}.message{font-size:28px}}
+</style>
+</head>
+<body>
+<div id="stars"></div>
+<div class="progress" id="progress">01 / 08</div>
+
+<section class="screen active" id="s1"><div class="card"><div class="eyebrow">A little secret awaits</div><h1>Hey, Madam Jii ❤️</h1><p>Someone has prepared a tiny universe just for you.</p><button class="btn" onclick="go(2)">Open the surprise ✨</button></div></section>
+
+<section class="screen" id="s2"><div class="card"><div class="eyebrow">Are you ready?</div><h2>Ready, Madam Jii? 💫</h2><p>No peeking. The fun starts now.</p><button class="btn" onclick="go(3)">I'm ready 💖</button></div><button class="back" onclick="go(1)">← Back</button></section>
+
+<section class="screen" id="s3"><div class="card"><div class="eyebrow">Birthday transmission</div><h2>Happy Birthday, Madam Jii! 🎂</h2><p>But before the real surprise… you have one little mission.</p><button class="btn" onclick="go(5)">Shoot the heart 🏹</button></div><button class="back" onclick="go(2)">← Back</button></section>
+
+<section class="screen" id="s5"><div class="game-wrap"><div class="game-title">Shoot the heart ❤️</div><div class="game-tip">Drag the arrow backward and release to fire.</div><canvas id="archeryCanvas"></canvas></div><button class="back" onclick="go(3)">← Back</button></section>
+
+<section class="screen" id="s9"><div class="card"><div class="eyebrow">Mission complete</div><h2>Congrats, my love! 💖</h2><p>You hit my heart… exactly where you always do. ❤️</p><button class="btn" onclick="go(6)">Continue ✨</button></div></section>
+
+<section class="screen" id="s6"><div class="card"><div class="eyebrow">Your surprise menu</div><h2>Choose your surprise 💕</h2><div class="options"><button class="option" onclick="go(7)">🎂 Surprise For You</button><button class="option" onclick="go(8)">💌 A Message For You</button></div></div><button class="back" onclick="go(9)">← Back</button></section>
+
+<section class="screen" id="s7"><div class="card"><div class="eyebrow">A little birthday magic 🎂</div><h2>A Surprise For You 💖</h2><p>Light the candles, make a wish, then cut your cake.</p>
+<div class="cake-scene">
+<div class="cake-3d" id="mainCakeVisual"><div class="cake-layer cake-bottom"></div><div class="cake-layer cake-middle"></div><div class="cake-layer cake-top"></div><div class="icing"><span class="drip"></span><span class="drip"></span><span class="drip"></span></div><div class="candle one"><span class="flame"></span></div><div class="candle two"><span class="flame"></span></div><div class="candle three"><span class="flame"></span></div><div class="cut-line"></div></div>
+<div id="knifeStage"><div class="teddy-knife" id="teddyKnife">🧸🔪</div></div>
+<div class="cake-note" id="cakeNote">The candles are waiting for you… ✨</div>
+<button class="btn" id="lightCandlesBtn" onclick="lightCandles()">🕯️ Light the Candles</button>
+<button class="btn secondary" id="cutCakeBtn" onclick="startCakeCutting()">🔪 Cut the Cake</button>
+</div>
+<button class="back" onclick="go(6)">← Back</button></div></section>
+
+<section class="screen" id="s8"><div class="card"><div class="eyebrow">Just for you</div><h2 class="message">I love you, Madam Jii. ❤️</h2><p>You make ordinary days feel special. Today is about celebrating you, and all the little moments that make you my favourite person.</p><button class="btn" onclick="go(6)">← Back to surprises</button></div></section>
+
+<script>
+const order={1:1,2:2,3:3,5:4,9:5,6:6,7:7,8:8};
+let current=1, hitCount=0, archeryReady=false;
+const el=id=>document.getElementById(id);
+for(let i=0;i<75;i++){const s=document.createElement('div');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=Math.random()*2.5+'s';el('stars').appendChild(s)}
+
+function go(n){
+ document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+ el('s'+n).classList.add('active'); current=n;
+ el('progress').textContent=String(order[n]||1).padStart(2,'0')+' / 08';
+ if(n===5){setTimeout(setupArchery,60)}
+ if(n===7){resetCake()}
+}
+function resetCake(){
+ hitCount=hitCount;
+ const stage=el('knifeStage'), knife=el('teddyKnife'), cake=el('mainCakeVisual');
+ stage.classList.remove('active'); cake.classList.remove('cake-split'); knife.textContent='🧸🔪';
+ el('cutCakeBtn').disabled=false; el('cutCakeBtn').textContent='🔪 Cut the Cake';
+ el('cakeNote').textContent='The candles are waiting for you… ✨';
+ document.querySelectorAll('#s7 .candle').forEach(c=>c.classList.remove('lit'));
+ window.cuttingStarted=false; window.cutFinished=false; window.knifeHasTouchedCake=false;
+}
+let candlesLit=false;
+function lightCandles(){
+ if(candlesLit)return; candlesLit=true;
+ document.querySelectorAll('#s7 .candle').forEach(c=>c.classList.add('lit'));
+ el('cakeNote').textContent='Make a wish, Madam Jii… ✨💖';
+ el('lightCandlesBtn').textContent='✨ Candles are glowing';
+ el('lightCandlesBtn').disabled=true;
+}
+window.cuttingStarted=false;window.cutFinished=false;window.knifeHasTouchedCake=false;
+function startCakeCutting(){
+ if(window.cuttingStarted)return;
+ window.cuttingStarted=true;
+ const stage=el('knifeStage'),knife=el('teddyKnife'),cake=el('mainCakeVisual');
+ stage.classList.add('active');
+ el('cutCakeBtn').textContent='🧸 Drag the teddy knife across the cake';
+ el('cakeNote').textContent='Drag the teddy knife across the cake to cut it! 💕';
+ knife.style.left='calc(50% - 27px)'; knife.style.top='2px';
+ function moveKnife(clientX,clientY){
+   const r=stage.getBoundingClientRect();
+   const x=Math.max(0,Math.min(r.width-54,clientX-r.left-27));
+   const y=Math.max(0,Math.min(r.height-54,clientY-r.top-27));
+   knife.style.left=x+'px';knife.style.top=y+'px';
+   const kr=knife.getBoundingClientRect(),cr=cake.getBoundingClientRect();
+   const hit=!(kr.right<cr.left||kr.left>cr.right||kr.bottom<cr.top||kr.top>cr.bottom);
+   if(hit)window.knifeHasTouchedCake=true;
+   return hit;
+ }
+ stage.onpointerdown=e=>{e.preventDefault();try{stage.setPointerCapture(e.pointerId)}catch(_){};moveKnife(e.clientX,e.clientY)}
+ stage.onpointermove=e=>{e.preventDefault();if(window.cutFinished)return;const hit=moveKnife(e.clientX,e.clientY);if(hit&&e.buttons===1)finishCakeCut()}
+ stage.onpointerup=e=>{e.preventDefault();try{stage.releasePointerCapture(e.pointerId)}catch(_){}}
+}
+function finishCakeCut(){
+ if(window.cutFinished||!window.knifeHasTouchedCake)return; window.cutFinished=true;
+ el('mainCakeVisual').classList.add('cake-split');
+ el('cakeNote').textContent='Yay! You cut the cake, Madam Jii! 🍰💖';
+ el('cutCakeBtn').textContent='🍰 Cake Cut Successfully'; el('cutCakeBtn').disabled=true;
+ el('teddyKnife').textContent='🧸🔪✨'; confetti();
+}
+function confetti(){
+ for(let i=0;i<35;i++){const d=document.createElement('div');d.textContent=i%2?'💖':'✨';d.style.position='fixed';d.style.left=(Math.random()*100)+'vw';d.style.top='-20px';d.style.fontSize=(14+Math.random()*16)+'px';d.style.zIndex=99;d.style.pointerEvents='none';document.body.appendChild(d);const dur=900+Math.random()*1100;d.animate([{transform:'translateY(0) rotate(0deg)',opacity:1},{transform:'translateY(105vh) rotate(540deg)',opacity:0}],{duration:dur,easing:'ease-in',fill:'forwards'}).onfinish=()=>d.remove()}
+}
+
+/* Mobile-friendly archery game */
+let canvas,ctx,W,H,bow={x:0,y:0},drag=false,dragX=0,dragY=0,arrow={x:0,y:0},flying=false;
+function setupArchery(){
+ canvas=el('archeryCanvas'); if(!canvas)return;
+ const dpr=Math.min(window.devicePixelRatio||1,2),r=canvas.getBoundingClientRect();
+ W=Math.max(320,r.width);H=Math.max(420,r.height);canvas.width=W*dpr;canvas.height=H*dpr;ctx=canvas.getContext('2d');ctx.setTransform(dpr,0,0,dpr,0,0);
+ bow={x:70,y:H-80}; arrow={x:bow.x+25,y:bow.y-4}; flying=false;draw();
+}
+function draw(){
+ if(!ctx)return;ctx.clearRect(0,0,W,H);
+ const hx=W-78,hy=78;
+ ctx.font='86px system-ui';ctx.textAlign='center';ctx.fillText('❤️',hx,hy+28);
+ ctx.strokeStyle='#fff';ctx.lineWidth=5;ctx.beginPath();ctx.arc(bow.x,bow.y,42,Math.PI*1.05,Math.PI*1.95);ctx.stroke();
+ const ax=drag?dragX:bow.x+25, ay=drag?dragY:bow.y-4;
+ ctx.strokeStyle='#e8d7c0';ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(bow.x+20,bow.y-3);ctx.lineTo(ax,ay);ctx.stroke();
+ ctx.fillStyle='#c9a66b';ctx.beginPath();ctx.moveTo(ax,ay);ctx.lineTo(ax-15,ay-7);ctx.lineTo(ax-15,ay+7);ctx.closePath();ctx.fill();
+ ctx.strokeStyle='#cfcfcf';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(bow.x-5,bow.y-40);ctx.quadraticCurveTo(ax,ay,bow.x-5,bow.y+40);ctx.stroke();
+}
+function fire(){
+ if(flying)return;flying=true;drag=false;
+ const sx=bow.x+25,sy=bow.y-4,tx=W-78,ty=78;
+ const st=performance.now();
+ function anim(t){
+  const p=Math.min(1,(t-st)/650),e=p*p*(3-2*p);arrow.x=sx+(tx-sx)*e;arrow.y=sy+(ty-sy)*e;
+  ctx.clearRect(0,0,W,H);ctx.font='86px system-ui';ctx.textAlign='center';ctx.fillText('❤️',tx,ty+28);
+  ctx.strokeStyle='#e8d7c0';ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(sx,sy);ctx.lineTo(arrow.x,arrow.y);ctx.stroke();
+  if(p<1){requestAnimationFrame(anim)}else{hitCount=1;setTimeout(()=>go(9),300)}
+ }requestAnimationFrame(anim)
+}
+function pointerPos(e){const r=canvas.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top}}
+if(window.PointerEvent){
+ document.addEventListener('pointerdown',e=>{if(current!==5||flying)return;const p=pointerPos(e);if(Math.hypot(p.x-(bow.x+25),p.y-(bow.y-4))<80){drag=true;dragX=p.x;dragY=p.y;}})
+ document.addEventListener('pointermove',e=>{if(current!==5||!drag||flying)return;const p=pointerPos(e);dragX=Math.max(20,Math.min(W-20,p.x));dragY=Math.max(20,Math.min(H-20,p.y));draw();})
+ document.addEventListener('pointerup',e=>{if(current!==5||!drag||flying)return;fire()})
+}
+window.addEventListener('resize',()=>{if(current===5)setTimeout(setupArchery,40)})
+</script>
+</body>
+</html>
